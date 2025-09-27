@@ -19,7 +19,7 @@ function Test-Installed {
 function Install-Git {
     $git_installer = "$env:TEMP\Git-Installer.exe"
     $bitness = Get-OSBitness
-    Invoke-WebRequest -Uri "https://github.com/git-for-windows/git/releases/latest/download/Git-$bitness-bit.exe" -OutFile $git_installer
+    Invoke-WebRequest -Uri "https://github.com/git-for-windows/git/releases/download/v2.51.0.windows.1/Git-2.51.0-$bitness-bit.exe" -OutFile $git_installer
     Start-Process -FilePath $git_installer -ArgumentList "/VERYSILENT /NORESTART" -Wait
     Remove-Item -Force $git_installer
 }
